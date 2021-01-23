@@ -1,6 +1,6 @@
 Protótipos
 
-Para acessar os protótipos em HTML e CSS, faça o download do arquivo Projeto_Integrador_Final.zip. Para acessar o mapa do site, faça o download do arquivo mapas_do_site.zip ou acesse pelos seguintes links:
+Os protótipos em HTML e CSS estão na pasta "Projeto_Integrador_Final". Para acessar o mapa do site, acesse os seguintes links:
 Mapa do site: 
 https://www.figma.com/file/lWB66NOgmddoQ58Be6shlh/Clinet---Projeto-Integrador?node-id=0%3A1 ,
 https://www.figma.com/file/RTQWT6mAMS9WcA3h3kv9Py/Mapa_Clinet?node-id=0%3A1 ;
