@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoIntegradorTelas", "ProjetoIntegradorTelas\ProjetoIntegradorTelas.csproj", "{D2A589E1-DDA0-4903-B7E6-7C91BA3FF62D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2A589E1-DDA0-4903-B7E6-7C91BA3FF62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A589E1-DDA0-4903-B7E6-7C91BA3FF62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A589E1-DDA0-4903-B7E6-7C91BA3FF62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A589E1-DDA0-4903-B7E6-7C91BA3FF62D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E438250F-8160-43F4-9702-AAD046454195}
+	EndGlobalSection
+EndGlobal
