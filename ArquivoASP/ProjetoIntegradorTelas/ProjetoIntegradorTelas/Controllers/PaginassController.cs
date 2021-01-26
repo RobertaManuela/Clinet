@@ -13,5 +13,22 @@ namespace ProjetoIntegradorTelas.Controllers
         {
             return View();
         }
+
+        public ActionResult contato()
+        {
+            return View();
+        }
+        public ActionResult clinica()
+        {
+            return View();
+        }
+        public ActionResult loginloginecadastro()
+        {
+            return View();
+        }
+
+
+
+
     }
 }

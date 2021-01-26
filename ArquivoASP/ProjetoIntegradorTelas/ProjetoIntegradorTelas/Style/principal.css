@@ -92,7 +92,7 @@ header div#user {
 /*nnnnnnnnnnnnnnnnnnnnnnn   menu   nnnnnnnnnnnnnnnnnnn*/
 
 header nav {
-    background-color: #85A0A9;
+    background-color: #415454;
     text-align: center;
     padding-top: 0.5em;
 }
@@ -107,12 +107,12 @@ header nav {
         font-family: 'Lekton', sans-serif;
         font-size: 24px;
         margin: 0em 1em;
-        padding-top: 0.25em;
-        padding-bottom: 0.40em;
+        padding-top: 0.55em;
+        padding-bottom: 0.70em;
     }
 
         header nav li:hover {
-            background-color: #016B68;
+            background-color: #25566B;
         }
 
         header nav li a {

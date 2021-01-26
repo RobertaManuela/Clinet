@@ -171,6 +171,9 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Paginass\Index.cshtml" />
+    <Content Include="Views\Paginass\contato.cshtml" />
+    <Content Include="Views\Paginass\clinica.cshtml" />
+    <Content Include="Views\Paginass\loginloginecadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

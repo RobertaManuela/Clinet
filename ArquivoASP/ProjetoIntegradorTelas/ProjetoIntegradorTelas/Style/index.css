@@ -44,7 +44,7 @@ section#card div {
     }
 /*GRUPO CLINET*********************************************************************/
 section#grupoClinet {
-    background-color: rgb(255, 165, 0, 60%);
+    background-color: #415454;
     display: flex;
     text-align: center;
     height: 37em;
@@ -72,7 +72,6 @@ section#grupoClinet {
         color: white;
         font-size: 40px;
         text-align: left;
-        text-decoration: underline;
         margin-top: 1.5em;
         margin-left: 6.5em;
     }
@@ -80,7 +79,7 @@ section#grupoClinet {
 /*DESENVOLVEDORES*******************************************/
 
 section#develop {
-    background-color: rgb(255, 165, 0, 60%);
+    background-color: #415454;
     text-align: center;
     height: 55em;
     margin-bottom: 2em;
@@ -95,7 +94,7 @@ section#develop {
 
     section#develop img {
         border-radius: 50%;
-        border: 1em solid #3377AA;
+        border: 1em solid #1215179c;
     }
 
     section#develop div {
@@ -109,7 +108,6 @@ section#develop {
         color: white;
         font-size: 40px;
         text-align: center;
-        text-decoration: underline;
         margin-top: 1em;
         padding-top: 1.5em;
     }
@@ -197,10 +195,8 @@ body {
 }
 
 main {
-    margin-top: 2em;
     align-items: center;
     display: block;
-    margin-bottom: 4em;
 }
 
 div.input-group-text {
@@ -234,25 +230,27 @@ fieldset#conts {
 }
 
 button {
-    background-color: #FFA500;
     border-width: 0;
     border-radius: 10px;
-    width: 10%;
+    width: 30%;
     height: 50px;
     color: white;
-    box-shadow: 1px 1px black;
-    align-self: right;
+    box-shadow: 1px 1px #415454;
+    border: 3px solid #FFA500;
+    background-color: transparent;
     margin-top: 0.5em;
-    margin-left: 87%;
+    margin-left: 65%;
 }
 
 #contato {
-    background-color: rgba(45, 121, 146,0.5);
+    background-color: #415454;
     margin: 0 auto;
     width: 40%;
     border-radius: 1em;
     padding-bottom: 0.5em;
     padding-top: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 #exampleFormControlTextarea1 {
@@ -273,16 +271,18 @@ body {
 }
 
 button#envlog {
-    background-color: #FFA500;
     border-width: 0;
     border-radius: 10px;
-    width: 70px;
+    width: 30%;
     height: 50px;
     color: white;
-    box-shadow: 1px 1px black;
-    align-self: center;
-    margin-left: 8em;
-    margin-bottom: 3em;
+    box-shadow: 1px 1px #415454;
+    border: 3px solid #FFA500;
+    background-color: transparent;
+    margin-top: 0.5em;
+    margin-left: 65%;
+    margin-top: -1em;
+    margin-bottom: 2em;
 }
 
 #login input#inlineFormInputGroup {
@@ -295,19 +295,18 @@ button#envlog {
 }
 
 main {
-    margin-top: 2em;
     align-items: center;
     display: block;
-    margin-bottom: 4em;
 }
 
 form#login {
     padding: 2em;
-    background-color: rgba(45, 121, 146,0.5);
+    background-color: #415454;
     border-color: white;
     border-width: 3em;
     align-items: center;
     margin: 0 auto;
+    margin-top: 2em;
     width: 400px;
     border-color: orange;
     border-width: 10px;
@@ -317,8 +316,8 @@ form#login {
 }
 
 #logim {
-    margin-bottom: -5em;
-    margin-left: 7.5em;
+    margin-bottom: -4em;
+    margin-left: 7.75em;
 }
 
 #login fieldset {
@@ -337,8 +336,9 @@ input.placeholder {
 
 #register {
     margin: 0 auto;
-    background-color: rgba(45, 121, 146,0.5);
+    background-color: #415454;
     width: 70em;
+    margin-bottom: 2em;
 }
 
 #l2 {
@@ -374,7 +374,7 @@ input.placeholder {
 }
 
     #register fieldset {
-        margin-top: -0.1em;
+        margin-top: 0.9em;
         padding-top: 3em;
         border-radius: 1em;
         border: 3px solid white;
@@ -419,16 +419,18 @@ input.placeholder {
     }
 
 button#envcad {
-    background-color: #FFA500;
     border-width: 0;
     border-radius: 10px;
-    width: 92%;
+    width: 30%;
     height: 50px;
     color: white;
-    box-shadow: 1px 1px black;
-    align-self: center;
-    margin-bottom: 3em;
-    margin-left: 2.2em;
+    box-shadow: 1px 1px #415454;
+    border: 3px solid #FFA500;
+    background-color: transparent;
+    margin-top: 0.5em;
+    margin-left: 65%;
+    margin-top: -1em;
+    margin-bottom: 2em;
 }
 
 
@@ -998,6 +1000,7 @@ form#form_filtro {
     background-color: rgb(255, 165, 0, 80%);
     display: flex;
     justify-content: center;
+    margin-top: 2em;
 }
 
     form#form_filtro input {
@@ -1041,7 +1044,7 @@ form#form_filtro a {
 
 div#clinica_info {
     margin: 1em;
-    background-color: #2D7992;
+    background-color: #415454;
     width: 22em;
     border-radius: 15px;
     text-align: center;
