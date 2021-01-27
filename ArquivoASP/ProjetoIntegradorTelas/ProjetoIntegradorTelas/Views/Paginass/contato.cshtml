@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model ProjetoIntegradorTelas.Models.contatoform 
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" lang="pt-br">
@@ -9,25 +11,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/Style/index.css">
     <link rel="stylesheet" type="text/css" href="~/Style/principal.css">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 </head>
 <body>
     <header>
         <div id="header_superior">
             <h1>
-                <a href="index"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                <a href="@Url.Action("Index", "Paginass")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
             </h1>
 
             <div id="form_pesquisa">
                 <form action="recebedados.html" method="post">
                     <input type="text" name="pesquisa">
-                    <a href="index">
+                    <a href="@Url.Action("Index", "PaginasController")">
                         <img src="~/images/lupa.png" width="20" height="20">
                     </a>
                 </form>
             </div>
 
             <div id="user">
-                <a href="loginloginecadastro">
+                <a href="@Url.Action("loginloginecadastro", "Paginass")">
                     <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
                 </a>
 
@@ -36,38 +39,41 @@
 
         <nav>
             <ol>
-                <li><a href="clinica"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
+                <li><a href="@Url.Action("clinica", "Paginass")"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
                 <li><a href="marcarconsulta"><img src="~/images/marcacao.png" width="32" height="32"> Marcações</a></li>
-                <li><a href="contato"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
+                <li><a href="@Url.Action("contato", "Paginass")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
             </ol>
         </nav>
     </header>
     <main>
-        <form id="contato">
+        <form id="contato" method="post">
+            @Html.AntiForgeryToken()
             <section id="tituloC">
                 <img src="~/images/fotoconosco.png">
             </section>
             <fieldset id="conts">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInputGroup">Username</label>
                     <div class="input-group mb-2">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nome Completo">
+                        @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @type = "text", @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Nome Completo" } })
                     </div>
                 </div>
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInputGroup">Username</label>
                     <div class="input-group mb-2">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @type = "text", @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "E-mail" } })
                     </div>
                 </div>
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInputGroup">Username</label>
                     <div class="input-group mb-2">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Telefone">
+                        @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @type = "text", @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Telefone" } })
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Mensagem" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    @Html.TextArea("Mensagem", htmlAttributes: new { @placeholder="Mensagem", @class="form-control", @id="exampleFormControlTextarea1", @rows="3"})
+                    
                 </div>
                 <button type="submit">Enviar</button>
             </fieldset>
