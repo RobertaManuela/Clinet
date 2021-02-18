@@ -13,7 +13,7 @@
     <header>
         <div id="header_superior">
             <h1>
-                <a href="@Url.Action("Index", "Paginass")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                <a href="@Url.Action("medicoPagInicial", "Paginass")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
             </h1>
 
             <div id="form_pesquisa">
@@ -26,7 +26,7 @@
             </div>
 
             <div id="user">
-                <a href="@Url.Action("loginloginecadastro", "Paginass")">
+                <a href="@Url.Action("medico_dadospessoais", "Paginass")">
                     <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
                 </a>
 
@@ -35,9 +35,9 @@
 
         <nav>
             <ol>
-                <li><a href="@Url.Action("clinica", "Paginass")"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
-                <li><a href="@Url.Action("marcarconsulta", "Paginass")"><img src="~/images/marcacao.png" width="32" height="32"> Marcação</a></li>
-                <li><a href="@Url.Action("contato", "Paginass")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
+                <li><a href="@Url.Action("clinicaMedico", "Paginass")"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
+                <li><a href="@Url.Action("horariosMedico", "Paginass")"><img src="~/images/calendar.png" width="32" height="32"> Horários</a></li>
+                <li><a href="@Url.Action("contatoMedico", "Paginass")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
             </ol>
         </nav>
     </header>

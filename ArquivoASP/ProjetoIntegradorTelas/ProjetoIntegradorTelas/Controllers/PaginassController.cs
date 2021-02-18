@@ -28,7 +28,35 @@ namespace ProjetoIntegradorTelas.Controllers
         {
             return View();
         }
+        public ActionResult histconsulta()
+        {
+            return View();
+        }
 
+        public ActionResult medicoPagInicial()
+        {
+            return View();
+        }
+
+        public ActionResult medico_dadospessoais()
+        {
+            return View();
+        }
+
+        public ActionResult clinicaMedico()
+        {
+            return View();
+        }
+
+        public ActionResult horariosMedico()
+        {
+            return View();
+        }
+
+        public ActionResult contatoMedico()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult contato(contatoform ctt) {
