@@ -66,5 +66,22 @@ namespace ProjetoIntegradorTelas.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult pacientePagInicial()
+        {
+            return View();
+        }
+
+        public ActionResult paciente_dadospessoais()
+        {
+            return View();
+        }
+
+        public ActionResult paciente_marcacao()
+        {
+            return View();
+        }
+
+
+
     }
 }

@@ -175,12 +175,14 @@
     <Content Include="Views\Paginass\contato.cshtml" />
     <Content Include="Views\Paginass\clinica.cshtml" />
     <Content Include="Views\Paginass\loginloginecadastro.cshtml" />
-    <Content Include="Views\Paginass\histconsulta.cshtml" />
     <Content Include="Views\Paginass\medicoPagInicial.cshtml" />
     <Content Include="Views\Paginass\medico_dadospessoais.cshtml" />
     <Content Include="Views\Paginass\clinicaMedico.cshtml" />
     <Content Include="Views\Paginass\horariosMedico.cshtml" />
     <Content Include="Views\Paginass\contatoMedico.cshtml" />
+    <Content Include="Views\Paginass\pacientePagInicial.cshtml" />
+    <Content Include="Views\Paginass\paciente_dadospessoais.cshtml" />
+    <Content Include="Views\Paginass\paciente_marcacao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

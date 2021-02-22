@@ -1346,7 +1346,10 @@ section.marcar2 {
 }
 
 button#bmarcar {
-    background-color: #FFA500;
+    background-color: transparent;
+    color: white;
+    box-shadow: 1px 1px #415454;
+    border: 3px solid #FFA500;
     border-radius: 25px;
     width: 12em;
     height: 2.5em;
@@ -1357,6 +1360,7 @@ button#bmarcar {
 }
 
 div.buttonM {
+    margin-bottom: 2em;
     display: flex;
     justify-content: center;
 }
@@ -1440,7 +1444,7 @@ button#salvaralter {
 
 /*PACIENTE- TELA INICIAL ************************************/
 div#card2 {
-    background-color: rgba(255, 165, 0, 0.6);
+    background-color: red;
     width: 200px;
     border-radius: 1em;
     padding-left: 0.7em;
