@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 using ProjetoIntegradorTelas.Models;
+using ProjetoIntegradorTelas.Context;
 
 namespace ProjetoIntegradorTelas.Controllers
 {
     public class PaginassController : Controller
     {
         private static IList<contatoform> mensagens = new List<contatoform>();
+        EFContext context = new EFContext(); 
         // GET: Paginass
         public ActionResult Index()
         {
@@ -24,9 +27,33 @@ namespace ProjetoIntegradorTelas.Controllers
         {
             return View();
         }
+        //GET : loginloginecadastro
         public ActionResult loginloginecadastro()
         {
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult loginloginecadastro(paciente register) {
+            if (!context.Cadastros.Any()) register.UserID = 1;
+            else register.UserID = context.Cadastros.Select(m => m.UserID).Max() + 1;
+            context.Cadastros.Add(register);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginForm(paciente register)
+        {
+            if (!context.Cadastros.Where(m => m.username == register.username).Any())
+            {
+                return HttpNotFound();
+            }
+            paciente attemp = context.Cadastros.Where(m => m.username == register.username).First();
+            if (attemp.password != register.password) {
+                return HttpNotFound();
+            }
+            return RedirectToAction("Index");
         }
         public ActionResult histconsulta()
         {
@@ -57,6 +84,10 @@ namespace ProjetoIntegradorTelas.Controllers
         {
             return View();
         }
+
+        public ActionResult medicocadastrar() {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult contato(contatoform ctt) {
@@ -81,7 +112,53 @@ namespace ProjetoIntegradorTelas.Controllers
             return View();
         }
 
+        public ActionResult secretariaPagInicial()
+        {
+            return View();
+        }
 
+        public ActionResult secretaria_listarmedico()
+        {
+            return View(context.Medicos.OrderBy(m => m.medicoID));
+        }
+
+        public ActionResult secretaria_cadastrarmedico()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult medico_cadastrar(medico register) {
+            if (!context.Medicos.Any())
+            {
+                register.medicoID = 1;
+            }
+            else register.medicoID = context.Medicos.Select(m => m.medicoID).Max() + 1;
+            context.Medicos.Add(register);
+            context.SaveChanges();
+            return RedirectToAction("secretariaPagInicial");
+        }
+
+        public ActionResult secretaria_CRUDmedico(int id)
+        {
+            medico updates = context.Medicos.Where(m => m.medicoID == id).First();
+            return View(updates);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Upload_medico(medico register) {
+            if (ModelState.IsValid) {
+                context.Entry(register).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("secretaria_listarmedico");
+            }
+            return RedirectToAction("secretariaPagInicial");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete_medico(medico register) {
+            return View();   
+        }
 
     }
 }

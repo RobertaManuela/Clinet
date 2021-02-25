@@ -232,3 +232,7 @@ C:\Users\thiag\Source\Repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoInte
 C:\Users\thiag\Source\Repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\roslyn\vbc.rsp
 C:\Users\thiag\Source\Repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\roslyn\VBCSCompiler.exe
 C:\Users\thiag\Source\Repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\EntityFramework.dll
+C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\EntityFramework.SqlServer.dll
+C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\EntityFramework.xml
+C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\ProjetoIntegradorTelas\bin\EntityFramework.SqlServer.xml

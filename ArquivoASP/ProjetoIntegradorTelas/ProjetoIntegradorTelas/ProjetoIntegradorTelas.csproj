@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -161,11 +167,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\PaginassController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\contatoform.cs" />
+    <Compile Include="Models\medico.cs" />
+    <Compile Include="Models\Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +183,6 @@
     <Content Include="Views\Paginass\Index.cshtml" />
     <Content Include="Views\Paginass\contato.cshtml" />
     <Content Include="Views\Paginass\clinica.cshtml" />
-    <Content Include="Views\Paginass\loginloginecadastro.cshtml" />
     <Content Include="Views\Paginass\medicoPagInicial.cshtml" />
     <Content Include="Views\Paginass\medico_dadospessoais.cshtml" />
     <Content Include="Views\Paginass\clinicaMedico.cshtml" />
@@ -183,6 +191,11 @@
     <Content Include="Views\Paginass\pacientePagInicial.cshtml" />
     <Content Include="Views\Paginass\paciente_dadospessoais.cshtml" />
     <Content Include="Views\Paginass\paciente_marcacao.cshtml" />
+    <Content Include="Views\Paginass\secretariaPagInicial.cshtml" />
+    <Content Include="Views\Paginass\loginloginecadastro.cshtml" />
+    <Content Include="Views\Paginass\secretaria_listarmedico.cshtml" />
+    <Content Include="Views\Paginass\secretaria_cadastrarmedico.cshtml" />
+    <Content Include="Views\Paginass\secretaria_CRUDmedico.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

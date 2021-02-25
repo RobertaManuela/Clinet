@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@model ProjetoIntegradorTelas.Models.paciente
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" lang="pt-br">
@@ -12,6 +18,9 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 </head>
 <body>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <header>
         <div id="header_superior">
             <h1>
@@ -44,34 +53,41 @@
         </nav>
     </header>
     <main>
-        <form id="login">
+        @using (Html.BeginForm("LoginForm", "Paginass", FormMethod.Post))
+        {
+            <div id="login">
+                @Html.AntiForgeryToken()
+                <img id="logim" src="~/images/loginicon.png" width="100px" height="100px">
+                <fieldset>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img src="~/images/userblack.jfif" alt="User_logo" width="20px" height="20px"></div>
+                            </div>
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @type = "text", @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Usuário" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img src="~/images/lock.png" alt="cadeado" width="20px" height="20px"></div>
+                            </div>
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @type = "password", @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Senha" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <button id="envlog" type="submit">Login</button>
+                </fieldset>
+            </div>
+        }
+        <form id="register" method="post">
             @Html.AntiForgeryToken()
-            <img id="logim" src="~/images/loginicon.png" width="100px" height="100px">
-            <fieldset>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><img src="~/images/userblack.jfif" alt="User_logo" width="20px" height="20px"></div>
-                        </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Usuário">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><img src="~/images/lock.png" alt="cadeado" width="20px" height="20px"></div>
-                        </div>
-                        <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Senha">
-                    </div>
-                </div>
-                <button id="envlog" type="submit">Login</button>
-            </fieldset>
-        </form>
-        <div id="register">
-            <form id="inscreva">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div id="inscreva">
                 <section id="titulo">
                     <img src="~/images/fotoinscreva.png">
                 </section>
@@ -80,7 +96,8 @@
                         <div class="col-auto">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nome Completo">
+                                @Html.EditorFor(model => model.nomecompleto, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Nome Completo" } })
+                                @Html.ValidationMessageFor(model => model.nomecompleto, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -88,25 +105,29 @@
                         <div class="col-auto">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Telefone">
+                                @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Telefone" } })
+                                @Html.ValidationMessageFor(model => model.telefone, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-auto" margin-right="50em">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Data de Nascimento">
+                                @Html.EditorFor(model => model.datanasc, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Data de Nascimento" } })
+                                @Html.ValidationMessageFor(model => model.datanasc, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
                     <div id="l3">
                         <div class="col-auto">
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="CPF" width="60px">
+                                @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "CPF", @width = "60px" } })
+                                @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-auto">
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="RG" width="60px">
+                                @Html.EditorFor(model => model.rg, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "RG", @width = "60px" } })
+                                @Html.ValidationMessageFor(model => model.rg, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -114,32 +135,15 @@
                         <div class="col-auto">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "E-mail" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
                 </fieldset>
-            </form>
-            <form id="tipo">
-                <section id="titulo">
-                    <img src="~/images/fotoperfil.png">
-                </section>
-                <fieldset id="checkboxfieldset">
-                    <div id="parts">
-                        <input type="checkbox" id="defaultcheck" value="" />
-                        <label for="defaultcheck">
-                            Secretária
-                        </label>
-                    </div>
-                    <div id="parts">
-                        <input type="checkbox" id="defaultcheck2" value="" />
-                        <label for="defaultcheck2">
-                            Paciente
-                        </label>
-                    </div>
-                </fieldset>
-            </form>
-            <form id="conta">
+            </div>
+
+            <div id="conta">
                 <section id="titulo">
                     <img src="~/images/fotousuario.png">
                 </section>
@@ -148,20 +152,22 @@
                         <div class="col-auto">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="User">
+                                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Usuario" } })
+                                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-auto" margin-right="50em">
                             <label class="sr-only" for="inlineFormInputGroup">Username</label>
                             <div class="input-group mb-2">
-                                <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Senha">
+                                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @type = "password", @class = "form-control", @id = "inlineFormInputGroup", @placeholder = "Senha" } })
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
                 </fieldset>
                 <button id="envcad" type="submit">Registrar-se</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </main>
     <footer>
         <div id="display_footer">
@@ -195,3 +201,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
