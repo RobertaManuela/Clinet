@@ -55,7 +55,7 @@
     <main>
         @using (Html.BeginForm("LoginForm", "Paginass", FormMethod.Post))
         {
-            <div id="login">
+            <div id="login" style="background-color: #415454;">
                 @Html.AntiForgeryToken()
                 <img id="logim" src="~/images/loginicon.png" width="100px" height="100px">
                 <fieldset>

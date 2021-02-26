@@ -53,7 +53,7 @@ namespace ProjetoIntegradorTelas.Controllers
             if (attemp.password != register.password) {
                 return HttpNotFound();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("pacientePagInicial");
         }
         public ActionResult histconsulta()
         {
@@ -128,7 +128,7 @@ namespace ProjetoIntegradorTelas.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult medico_cadastrar(medico register) {
+        public ActionResult secretaria_cadastrarmedico(medico register) {
             if (!context.Medicos.Any())
             {
                 register.medicoID = 1;
@@ -154,10 +154,12 @@ namespace ProjetoIntegradorTelas.Controllers
             }
             return RedirectToAction("secretariaPagInicial");
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete_medico(medico register) {
-            return View();   
+
+        public ActionResult Delete_medico(int idm) {
+            medico register = context.Medicos.Where(m => m.medicoID == idm).First();
+            context.Medicos.Remove(register);
+            context.SaveChanges();
+            return RedirectToAction("secretariaPagInicial");   
         }
 
     }

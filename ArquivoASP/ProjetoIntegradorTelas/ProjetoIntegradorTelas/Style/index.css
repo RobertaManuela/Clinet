@@ -300,7 +300,7 @@ main {
 
 #login {
     padding: 2em;
-    background-color: #415454;
+    background-color: transparent;
     border-color: white;
     border-width: 3em;
     align-items: center;
@@ -417,10 +417,28 @@ input.placeholder {
         margin: 0 auto;
     }
 
-button#envcad {
+#envcad {
     border-width: 0;
     border-radius: 10px;
     width: 30%;
+    height: 50px;
+    color: white;
+    box-shadow: 1px 1px #415454;
+    border: 3px solid #FFA500;
+    background-color: transparent;
+    margin-top: 0.5em;
+    margin-left: 65%;
+    margin-top: -1em;
+    margin-bottom: 2em;
+}
+
+#envcadprototype {
+    padding-top: 10px;
+    border-width: 0;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    width: 115px;
     height: 50px;
     color: white;
     box-shadow: 1px 1px #415454;
@@ -474,7 +492,7 @@ div.avisos {
 article.caixas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: end;
     width: 55em;
     margin: 1em auto;
 }
@@ -703,13 +721,19 @@ div#paragrafoClini_info {
 #atendimento {
     margin-left: 22em;
     border-radius: 2em;
-    width: 50em;
-    height: 39em;
+    width: 52em;
+    height: 43em;
     background-color: #2D7992;
     color: white;
     margin-top: 2em;
     padding-top: 2em;
 }
+
+    #atendimento #botoescrudmedico {
+        width: 10em;
+        display: flex;
+        justify-content: space-between;
+    }
 
     #atendimento p {
         text-align: center;
@@ -725,7 +749,7 @@ div#paragrafoClini_info {
     #atendimento fieldset {
         border-radius: 1em;
         border: 3px solid white;
-        height: 570px;
+        height: 620px;
     }
 
 div#login {
@@ -801,6 +825,8 @@ button#att {
 section#flex_clinica {
     display: inline-flex;
     margin: 1em 23em;
+    width: 800px;
+    flex-wrap: wrap;
 }
 
 form#form_filtro {
@@ -855,7 +881,7 @@ div#clinica_info {
     border-radius: 15px;
     text-align: center;
     color: white;
-    height: 29em;
+    height: 24em;
     font-family: 'Playfair Display', serif;
     padding-top: 1em;
 }
@@ -1044,7 +1070,7 @@ div#clinica_info {
     border-radius: 15px;
     text-align: center;
     color: white;
-    height: 22em;
+    height: 24em;
     font-family: 'Playfair Display', serif;
     padding-top: 1em;
 }
@@ -1438,7 +1464,7 @@ button#salvaralter {
 
 /*PACIENTE- TELA INICIAL ************************************/
 div#card2 {
-    background-color: red;
+    background-color: #415454;
     width: 200px;
     border-radius: 1em;
     padding-left: 0.7em;
